@@ -10,15 +10,15 @@ Show most recently visitors on your siderbar widget
 
 == Description ==
 
-Most-Recenet-Visitors is a very simple wordpress plugin, which display latest visitors¡¯s basic information(ip, referer url, target url, and the time) in sidebar widget. You can customize the widget¡¯s title, and the number of visitors to show. Though the plugin will record the visitors¡¯ information in your database, it uses very very little database space, so don¡¯t worry about it.
+Most-Recenet-Visitors is a very simple wordpress plugin, which display latest visitors's basic information(ip, referer url, target url, and the time) in sidebar widget. You can customize the widget's title, and the number of visitors to show. Though the plugin will record the visitors' information in your database, it uses very very little database space, so don't worry about it.
 
-Ye, it¡¯s just a small toy.
+Ye, it's just a small toy.
 
 == Installation ==
 
 1. Download the plugin
 1. Unachinve it
-1. Upload to wp-content/plugin/
+1. Upload to wp-content/plugin/ , keep the file structure right.
 1. Login to plugin page and activate it
 1. Go to Design->Widgets. Most Recent Visitors is already there 
 
