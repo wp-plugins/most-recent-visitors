@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Most Recent Visitors
-Plugin URI: [insert the plugin uri here]
+Plugin URI: http://www.kylogs.com/blog/archives/507.html
 Description: Show most recently visitors on your siderbar widget
 Author: Chen Ju
 Version: 0.1
