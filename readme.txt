@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: Most Recent Visitors
+Contributors: Chen Ju
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=sammy105%40gmail%2ecom&item_name=Most%20Recent%20Visitors&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8
 Tags: widgets,sidebar,widget,visitors,page
 Requires at least: 2.5
