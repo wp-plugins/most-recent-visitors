@@ -392,7 +392,7 @@ if (!class_exists('cj_latsted_visitors')) {
 													$cj_w.=$value['fromurl'].'>';
 													$cj_w.=$f1.'</a> <br/>';
 												}
-												$cj_w.='visits <a href=';
+												$cj_w.='visited <a href=';
 												$cj_w.=$tourl;
 												$cj_w.='> here</a>';
 												
