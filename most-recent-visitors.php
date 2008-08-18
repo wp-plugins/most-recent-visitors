@@ -4,7 +4,7 @@ Plugin Name: Most Recent Visitors
 Plugin URI: http://www.kylogs.com/blog/archives/507.html
 Description: Show most recently visitors on your siderbar widget
 Author: Chen Ju
-Version: 0.1
+Version: 0.2
 Author URI: http://www.kylogs.com/blog
 */ 
 
@@ -316,6 +316,7 @@ if (!class_exists('cj_latsted_visitors')) {
 			add_option('latest_visitors_db_version',$plugin_db_version);
 			add_option("cj_latest_visitors_title","Most Recent Visitors");
 			add_option("cj_latest_visitors_show","5");
+			add_option("cj_latest_visitors_ip","true");
 			//add_option("cj_latest_visitors_")
 			
 		}
@@ -340,6 +341,7 @@ if (!class_exists('cj_latsted_visitors')) {
 			if($num>20) $num=20;
 			$result = $wpdb->get_results("SELECT * FROM $this->db_table_name order by id DESC",ARRAY_A);
 			$count = get_option('cj_latest_visitors_show');
+			$cj_ip=get_option('cj_latest_visitors_ip');
 			$len=count($result);
 			if($num>$len) $num=$len;
 			?>
@@ -375,9 +377,15 @@ if (!class_exists('cj_latsted_visitors')) {
 												$t=parse_url($value['tourl']);
 												$t1=$t['host'];
 												$cj_w='';
+												
 												//$cj_w.='';
+												if($cj_ip=='true'){
 												$cj_w.='<li class=cj_li>[<a href=http://www.whois-search.com/whois/'.$value['ip'];
 												$cj_w.='>'.$value['ip'].'</a>] AT   ';
+												}else {
+													$cj_w.='<li class=cj_li>[Guest ] AT ';
+												}
+												
 												$cj_w.='<span class=cj_left>';
 												$sign=-1;
 												if($day>0) {$cj_w.=round($day,2).' day(s)'; $sign=1;}
@@ -418,15 +426,21 @@ if (!class_exists('cj_latsted_visitors')) {
 		if ( $_POST["latest_visitors_submit"]=='1' ) {
 			update_option('cj_latest_visitors_title',$_POST['cj_title']);
 			update_option('cj_latest_visitors_show',$_POST['cj_show']);
+			if($_POST['cj_ip']==true) update_option('cj_latest_visitors_ip','true');
+			else	update_option('cj_latest_visitors_ip','false');
 		}
 		$title=get_option('cj_latest_visitors_title');
 		$show=get_option('cj_latest_visitors_show');
+		$ip=get_option('cj_latest_visitors_ip');
+		$checked='';
+		if($ip=='true') $checked='checked';
 		
 		?>
+	
 		<p style="text-align:left;"><label for="visitor-title">Title: <input class="widefat" style="width: 200px;" id="cj_title" name="cj_title" type="text" value="<?php  echo $title ?>" /></label></p>
     <p style="text-align:left;"><label for="visitor-title">The number of visitors to show: <input class="widefat" style="width: 200px;" id="cj_show" name="cj_show" type="text" value="<?php  echo $show ?>" /></label></p>
-    
-		
+    <p style="text-align:left;"><label for="visitor-ip">Show Guest's ip on sidebar: <input  id="cj_ip" name="cj_ip" type="checkbox" <?php  echo $checked ?> /></label></p>
+ 
 		<!--//*****************************************************************************************-->
 		<!-- // Include your form here to collect the widget options-->
 		<!-- // Pre-fix all your form elements with widgetizer-->
