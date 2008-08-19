@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=sammy
 Tags: widgets,sidebar,widget,visitors,page
 Requires at least: 2.5
 Tested up to: 2.6
-Stable tag: 0.2
+Stable tag: 0.3
 
 Show most recently visitors on your siderbar widget
 
